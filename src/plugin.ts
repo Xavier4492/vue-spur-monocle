@@ -28,5 +28,5 @@ export const MonoclePlugin: Plugin = {
     const monocle = new Monocle(options)
     app.config.globalProperties.$monocle = monocle
     app.provide(MonocleKey, monocle)
-  }
+  },
 }
