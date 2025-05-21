@@ -4,11 +4,10 @@ import parserTs from '@typescript-eslint/parser'
 
 export default [
   {
-    parser: 'vue-eslint-parser',
-    parserOptions: { parser: '@typescript-eslint/parser', ecmaVersion: 'latest', sourceType: 'module' },
-  
-    files: ['**/*.ts', '**/*.js', '**/*.vue'],
-    extends: ['plugin:vue/vue3-recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+    ignores: ['node_modules/**', 'dist/**', 'coverage/**', '**/*.d.ts']
+  },
+  {
+    files: ['**/*.ts', '**/*.js'],
     languageOptions: {
       parser: parserTs,
       ecmaVersion: 'latest',

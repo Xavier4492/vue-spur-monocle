@@ -1,5 +1,5 @@
 import { inject } from 'vue'
-import Monocle, { MonocleEvents } from 'spur-monocle-manager'
+import { MonocleEvents } from 'spur-monocle-manager'
 import { MonocleKey } from '../injectionKey'
 
 export interface UseMonocleComposable {

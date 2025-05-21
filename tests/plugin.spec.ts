@@ -12,13 +12,16 @@ describe('MonoclePlugin', () => {
     expect(app.config.globalProperties.$monocle).toBeDefined()
 
     // Injection
-    const wrapper = mount({
-      template: '<div />',
-      setup() {
-        const mono = inject(MonocleKey)
-        expect(mono).toBeDefined()
-      }
-    }, { global: { plugins: [[MonoclePlugin, { token: 'test-token' }]] } })
+    const wrapper = mount(
+      {
+        template: '<div />',
+        setup() {
+          const mono = inject(MonocleKey)
+          expect(mono).toBeDefined()
+        },
+      },
+      { global: { plugins: [[MonoclePlugin, { token: 'test-token' }]] } },
+    )
 
     expect(wrapper).toBeTruthy()
   })

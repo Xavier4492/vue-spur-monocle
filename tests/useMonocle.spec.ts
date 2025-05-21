@@ -7,7 +7,7 @@ const Dummy = defineComponent({
   setup() {
     const { init, getBundle, on, off } = useMonocle()
     return () => h('div')
-  }
+  },
 })
 
 describe('useMonocle composable', () => {
@@ -19,8 +19,8 @@ describe('useMonocle composable', () => {
     const mockMonocle = { init: vi.fn(), getBundle: vi.fn(), on: vi.fn(), off: vi.fn() }
     const wrapper = mount(Dummy, {
       global: {
-        provide: { [MonocleKey as symbol]: mockMonocle }
-      }
+        provide: { [MonocleKey as symbol]: mockMonocle },
+      },
     })
     // At mount we should have called nothing yet
     expect(mockMonocle.init).not.toHaveBeenCalled()
