@@ -2,6 +2,12 @@
 
 All notable changes...
 
+## [1.0.2](https://github.com/Xavier4492/vue-spur-monocle/compare/v1.0.1...v1.0.2) (2025-05-21)
+
+### Bug Fixes
+
+* update spur-monocle-manager to version 1.2.4 in package.json and package-lock.json ([da07de9](https://github.com/Xavier4492/vue-spur-monocle/commit/da07de98350e373ccb147789623195fb4adf0306))
+
 ## [1.0.1](https://github.com/Xavier4492/vue-spur-monocle/compare/v1.0.0...v1.0.1) (2025-05-21)
 
 ### Bug Fixes
