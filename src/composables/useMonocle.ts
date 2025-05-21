@@ -2,6 +2,7 @@ import { inject } from 'vue'
 import { MonocleEvents } from 'spur-monocle-manager'
 import { MonocleKey } from '../injectionKey'
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface UseMonocleComposable {
   init: () => Promise<void>
   getBundle: () => Promise<any>

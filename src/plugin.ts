@@ -13,6 +13,7 @@ import { MonocleKey } from './injectionKey'
  * app.mount('#app')
  * ```
  */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const MonoclePlugin: Plugin = {
   install(app: App, options: MonocleOptions) {
     // 1️⃣ Ne rien faire en SSR

@@ -3,8 +3,10 @@ import { mount } from '@vue/test-utils'
 import { useMonocle } from '../src/composables/useMonocle'
 import { MonocleKey } from '../src/injectionKey'
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const Dummy = defineComponent({
   setup() {
+    // Destructure the Monocle composable; eslint rule for unused vars is disabled at file scope
     const { init, getBundle, on, off } = useMonocle()
     return () => h('div')
   },
@@ -22,7 +24,8 @@ describe('useMonocle composable', () => {
         provide: { [MonocleKey as symbol]: mockMonocle },
       },
     })
-    // At mount we should have called nothing yet
+
     expect(mockMonocle.init).not.toHaveBeenCalled()
+    expect(wrapper.exists()).toBe(true)
   })
 })
