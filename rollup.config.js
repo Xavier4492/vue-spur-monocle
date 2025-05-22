@@ -1,43 +1,63 @@
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import typescript from 'rollup-plugin-typescript2'
+import vue from 'rollup-plugin-vue'
+import terser from '@rollup/plugin-terser'
 
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
-import vue from 'rollup-plugin-vue';
-import terser from '@rollup/plugin-terser';
+const basePlugins = [
+  resolve(),
+  typescript({
+    tsconfig: './tsconfig.json',
+    tsconfigOverride: { compilerOptions: { declaration: false } },
+    clean: true,
+  }),
+  commonjs(),
+  vue({ compileTemplate: true }),
+  terser(),
+]
 
-export default {
-  input: 'src/index.ts',
+const modulesBuild = {
+  input: ['src/composables/useMonocle.ts', 'src/injectionKey.ts'],
   external: ['vue'],
-  plugins: [
-    resolve(),
-    commonjs(),
-    typescript({ tsconfig: './tsconfig.json' }),
-    vue({ compileTemplate: true }),
-    terser()
+  plugins: basePlugins,
+  output: [
+    {
+      dir: 'dist',
+      format: 'es',
+      sourcemap: true,
+      preserveModules: true,
+      preserveModulesRoot: 'src',
+      entryFileNames: '[name].js',
+    },
+    {
+      dir: 'dist',
+      format: 'cjs',
+      exports: 'named',
+      sourcemap: true,
+      preserveModules: true,
+      preserveModulesRoot: 'src',
+      entryFileNames: '[name].cjs.js',
+    },
   ],
+}
+
+const entryBuild = {
+  input: 'src/index.ts',
+  external: (id) => id === 'vue' || id.endsWith('/useMonocle') || id.endsWith('/injectionKey'),
+  plugins: basePlugins,
   output: [
     {
       file: 'dist/index.esm.js',
       format: 'es',
-      sourcemap: true
+      sourcemap: true,
     },
     {
       file: 'dist/index.cjs.js',
       format: 'cjs',
       exports: 'named',
-      sourcemap: true
+      sourcemap: true,
     },
-    // For enabled UMD build add this in package.json and uncomment the output below
-    // packageJson.browser: "dist/index.umd.js",
-    // packageJson.types: "dist/index.d.ts",
-    // packageJson.exports["."].default: "./dist/index.umd.js"
-    // {
-    //   file: 'dist/index.umd.js',
-    //   name: 'VueSpurMonocle',
-    //   format: 'umd',
-    //   globals: { vue: 'Vue' },
-    //   sourcemap: true
-    // }
-  ]
-
+  ],
 }
+
+export default [modulesBuild, entryBuild]

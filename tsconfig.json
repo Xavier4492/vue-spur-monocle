@@ -13,7 +13,7 @@
     "target": "ES2019",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "declaration": true,
+    "rootDir": ".",                // pointe sur la racine pour englober src + tests
     "outDir": "dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -22,5 +22,4 @@
   },
   "include": ["src/**/*.ts", "src/**/*.vue", "tests"],
   "incremental": true,
-  "declarationMap": true
 }

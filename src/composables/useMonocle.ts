@@ -33,7 +33,7 @@ export function useMonocle() {
   /**
    * Retrieves a freshly generated assessment
    */
-  async function getAssessment(): Promise<any> {
+  async function getAssessment(): Promise<string> {
     if (!monocle) {
       throw new Error('[Monocle] instance not found: did you include the boot file?')
     }
