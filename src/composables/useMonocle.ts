@@ -5,7 +5,7 @@ import { MonocleKey } from '../injectionKey'
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface UseMonocleComposable {
   init: () => Promise<void>
-  getBundle: () => Promise<any>
+  getAssessment: () => Promise<any>
   on: (event: MonocleEvents, handler: (detail: any) => void) => void
   off: (event: MonocleEvents, handler: (detail: any) => void) => void
 }
@@ -31,13 +31,13 @@ export function useMonocle() {
   }
 
   /**
-   * Retrieves a freshly generated bundle
+   * Retrieves a freshly generated assessment
    */
-  async function getBundle(): Promise<any> {
+  async function getAssessment(): Promise<any> {
     if (!monocle) {
       throw new Error('[Monocle] instance not found: did you include the boot file?')
     }
-    return monocle.getBundle()
+    return monocle.getAssessment()
   }
 
   /**
@@ -62,7 +62,7 @@ export function useMonocle() {
 
   return {
     init,
-    getBundle,
+    getAssessment,
     on,
     off,
   }

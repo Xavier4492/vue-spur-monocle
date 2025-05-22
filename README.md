@@ -63,7 +63,7 @@ Inside your components:
 
 ```vue
 <template>
-  <button @click="loadBundle">Load Bundle</button>
+  <button @click="loadAssessment">Load Assessment</button>
 </template>
 
 <script lang="ts">
@@ -71,11 +71,11 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   methods: {
-    async loadBundle() {
+    async loadAssessment() {
       try {
         await this.$monocle.init()
-        const data = await this.$monocle.getBundle()
-        console.log('Bundle data:', data)
+        const data = await this.$monocle.getAssessment()
+        console.log('Assessment data:', data)
       } catch (error) {
         console.error('Monocle error:', error)
       }
@@ -105,22 +105,22 @@ In a `<script setup>` component:
 
 ```vue
 <template>
-  <button @click="fetchBundle">Fetch Bundle</button>
+  <button @click="fetchAssessment">Fetch Assessment</button>
 </template>
 
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 import { useMonocle } from 'vue-spur-monocle'
 
-const { init, getBundle, on, off } = useMonocle()
+const { init, getAssessment, on, off } = useMonocle()
 
 onMounted(async () => {
   await init()
 })
 
-function fetchBundle() {
-  getBundle()
-    .then(data => console.log('Bundle data:', data))
+function fetchAssessment() {
+  getAssessment()
+    .then(data => console.log('Assessment data:', data))
     .catch(err => console.error('Error:', err))
 }
 
@@ -146,7 +146,7 @@ Install the plugin and injects the Monocle instance:
 Returns an object with methods to interact with Monocle:
 
 * `init(): Promise<void>` — Load/inject the Monocle script.
-* `getBundle(): Promise<any>` — Refresh and retrieve the Monocle data bundle.
+* `getAssessment(): Promise<any>` — Refresh and retrieve the Monocle data assessment.
 * `on(event: MonocleEvents, handler: (detail: any) => void): void` — Listen to events.
 * `off(event: MonocleEvents, handler: (detail: any) => void): void` — Remove an event listener.
 
@@ -158,7 +158,7 @@ Returns an object with methods to interact with Monocle:
 
 ## Server-Side Rendering (SSR)
 
-This plugin detects SSR and performs no operations on the server. Both `init()` and `getBundle()` immediately resolve with no side effects when `window` is undefined.
+This plugin detects SSR and performs no operations on the server. Both `init()` and `getAssessment()` immediately resolve with no side effects when `window` is undefined.
 
 ## Tests & CI
 

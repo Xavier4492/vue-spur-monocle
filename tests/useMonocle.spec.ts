@@ -7,7 +7,7 @@ import { MonocleKey } from '../src/injectionKey'
 const Dummy = defineComponent({
   setup() {
     // Destructure the Monocle composable; eslint rule for unused vars is disabled at file scope
-    const { init, getBundle, on, off } = useMonocle()
+    const { init, getAssessment, on, off } = useMonocle()
     return () => h('div')
   },
 })
@@ -18,7 +18,7 @@ describe('useMonocle composable', () => {
   })
 
   it('works when provided', () => {
-    const mockMonocle = { init: vi.fn(), getBundle: vi.fn(), on: vi.fn(), off: vi.fn() }
+    const mockMonocle = { init: vi.fn(), getAssessment: vi.fn(), on: vi.fn(), off: vi.fn() }
     const wrapper = mount(Dummy, {
       global: {
         provide: { [MonocleKey as symbol]: mockMonocle },
