@@ -9,7 +9,7 @@ A Vue 3 integration for the Monocle SDK (`spur-monocle-manager`), enabling dynam
 * Automatic injection and management of the Monocle script
 * Server-Side Rendering (SSR) support (no-op on server)
 * Unified API for both Composition API and Options API
-* Custom events: `monocle-success`, `monocle-error`, `monocle-onload`
+* Custom events: `assessment`, `error`, `load`
 
 ## Table of Contents
 
@@ -125,9 +125,9 @@ function fetchAssessment() {
 }
 
 // Example event subscription
-on('monocle-success', payload => console.log('Success event:', payload))
+on('assessment', payload => console.log('Success event:', payload))
 // To remove an event listener
-off('monocle-success', /* yourHandler */)
+off('assessment', /* yourHandler */)
 </script>
 ```
 
@@ -138,6 +138,7 @@ off('monocle-success', /* yourHandler */)
 Install the plugin and injects the Monocle instance:
 
 * `opts.token: string` — Your Monocle API token.
+* `opts.debug: boolean` — Enable debug mode (default: `false`).
 * Adds `$monocle` to `app.config.globalProperties` (Options API).
 * Provides the instance under `MonocleKey` (Composition API).
 
@@ -146,19 +147,19 @@ Install the plugin and injects the Monocle instance:
 Returns an object with methods to interact with Monocle:
 
 * `init(): Promise<void>` — Load/inject the Monocle script.
-* `getAssessment(): Promise<any>` — Refresh and retrieve the Monocle data assessment.
+* `getAssessment(): Promise<string>` — Refresh and retrieve the Monocle data assessment.
 * `on(event: MonocleEvents, handler: (detail: any) => void): void` — Listen to events.
 * `off(event: MonocleEvents, handler: (detail: any) => void): void` — Remove an event listener.
 
 **Types exported:**
 
-* `MonocleEvents` — `'monocle-success' | 'monocle-error' | 'monocle-onload'`
+* `MonocleEvents` — `'assessment' | 'error' | 'load'`
 * `MonocleOptions` — `{ token: string }`
 * `MonocleKey` — Injection key symbol (for advanced usage)
 
 ## Server-Side Rendering (SSR)
 
-This plugin detects SSR and performs no operations on the server. Both `init()` and `getAssessment()` immediately resolve with no side effects when `window` is undefined.
+This plugin detects SSR and performs no operations on the server. Both `init()` and `getAssessment()` will throw an error if called on the server. The Monocle script should be only loaded on the client side.
 
 ## Tests & CI
 
