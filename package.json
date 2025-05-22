@@ -27,15 +27,18 @@
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
     },
     "./composables/useMonocle": {
       "import": "./dist/composables/useMonocle.js",
-      "require": "./dist/composables/useMonocle.cjs.js"
+      "require": "./dist/composables/useMonocle.cjs.js",
+      "types": "./dist/composables/useMonocle.d.ts"
     },
     "./injectionKey": {
       "import": "./dist/injectionKey.js",
-      "require": "./dist/injectionKey.cjs.js"
+      "require": "./dist/injectionKey.cjs.js",
+      "types": "./dist/injectionKey.d.ts"
     }
   },
   "files": [
