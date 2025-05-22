@@ -174,6 +174,10 @@ This plugin detects SSR and performs no operations on the server. Both `init()` 
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
+## Donate
+
+If you appreciate the work that went into this App Extension, please consider [donating to Vue.js](https://vuejs.org/support-vuejs/).
+
 ## License
 
 MIT
