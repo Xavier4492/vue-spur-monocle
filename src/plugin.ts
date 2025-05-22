@@ -16,16 +16,13 @@ import { MonocleKey } from './injectionKey'
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export const MonoclePlugin: Plugin = {
   install(app: App, options: MonocleOptions) {
-    // 1️⃣ Ne rien faire en SSR
     if (typeof window === 'undefined') return
 
-    // 2️⃣ Éviter un second use() sur la même app
     if ((app.config.globalProperties as any).$monocle) {
-      console.warn('[MonoclePlugin] déjà installé sur cette instance d’app.')
+      console.warn('[MonoclePlugin] already installed on this app instance.')
       return
     }
 
-    // 3️⃣ Instancier et injecter
     const monocle = new Monocle(options)
     app.config.globalProperties.$monocle = monocle
     app.provide(MonocleKey, monocle)
