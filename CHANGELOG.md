@@ -2,6 +2,16 @@
 
 All notable changes...
 
+## [2.0.2](https://github.com/Xavier4492/vue-spur-monocle/compare/v2.0.1...v2.0.2) (2025-05-22)
+
+### ⚠ BREAKING CHANGES
+
+* update build configuration and improve type definitions
+
+### Code Refactoring
+
+* update build configuration and improve type definitions ([8a25bfd](https://github.com/Xavier4492/vue-spur-monocle/commit/8a25bfd00c142e009329403e5a807a4ee10298cb))
+
 ## [2.0.1](https://github.com/Xavier4492/vue-spur-monocle/compare/v2.0.0...v2.0.1) (2025-05-22)
 
 ### Bug Fixes
