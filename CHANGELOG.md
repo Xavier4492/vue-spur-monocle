@@ -2,6 +2,12 @@
 
 All notable changes...
 
+## [1.0.4](https://github.com/Xavier4492/vue-spur-monocle/compare/v1.0.3...v1.0.4) (2025-05-22)
+
+### Bug Fixes
+
+* update method names and references from 'bundle' to 'assessment' in README, composables, and tests; upgrade spur-monocle-manager to version 1.3.0 ([95cf18d](https://github.com/Xavier4492/vue-spur-monocle/commit/95cf18da7a8f7e5a19aabfa4fbfee52afd753b29))
+
 ## [1.0.3](https://github.com/Xavier4492/vue-spur-monocle/compare/v1.0.2...v1.0.3) (2025-05-22)
 
 ### Bug Fixes
