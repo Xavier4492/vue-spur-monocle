@@ -2,6 +2,16 @@
 
 All notable changes...
 
+## [2.0.0](https://github.com/Xavier4492/vue-spur-monocle/compare/v1.0.4...v2.0.0) (2025-05-22)
+
+### ⚠ BREAKING CHANGES
+
+* update to version 2.0.0
+
+### Features
+
+* update to version 2.0.0 ([fcf681a](https://github.com/Xavier4492/vue-spur-monocle/commit/fcf681a68c1ff3c322a3677b141522522a670cea))
+
 ## [1.0.4](https://github.com/Xavier4492/vue-spur-monocle/compare/v1.0.3...v1.0.4) (2025-05-22)
 
 ### Bug Fixes
