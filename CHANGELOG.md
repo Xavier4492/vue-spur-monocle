@@ -2,6 +2,12 @@
 
 All notable changes...
 
+## [2.0.3](https://github.com/Xavier4492/vue-spur-monocle/compare/v2.0.2...v2.0.3) (2025-05-22)
+
+### Bug Fixes
+
+* add type definitions to exports in package.json ([0c1824e](https://github.com/Xavier4492/vue-spur-monocle/commit/0c1824e8416b9bf0fd7a58377ba2ae247c9f78d1))
+
 ## [2.0.2](https://github.com/Xavier4492/vue-spur-monocle/compare/v2.0.1...v2.0.2) (2025-05-22)
 
 ### ⚠ BREAKING CHANGES
