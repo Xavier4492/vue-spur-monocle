@@ -2,7 +2,10 @@
 
 > **Note:** This is **not** an official package. For the official Monocle documentation, please visit: [https://docs.spur.us/monocle](https://docs.spur.us/monocle)
 
-[![npm version](https://img.shields.io/npm/v/vue-spur-monocle.svg)](https://www.npmjs.com/package/vue-spur-monocle) [![build](https://img.shields.io/github/actions/workflow/status/Xavier4492/vue-spur-monocle/ci.yml?branch=main)](https://github.com/Xavier4492/vue-spur-monocle/actions) [![license](https://img.shields.io/npm/l/vue-spur-monocle.svg)](LICENSE)
+[![CI](https://github.com/Xavier4492/vue-spur-monocle/actions/workflows/ci.yml/badge.svg)](https://github.com/Xavier4492/vue-spur-monocle/actions/workflows/ci.yml)
+[![Release](https://github.com/Xavier4492/vue-spur-monocle/actions/workflows/release.yml/badge.svg)](https://github.com/Xavier4492/vue-spur-monocle/actions/workflows/release.yml)
+[![npm version](https://img.shields.io/npm/v/vue-spur-monocle.svg)](https://www.npmjs.com/package/vue-spur-monocle)
+[![license](https://img.shields.io/npm/l/vue-spur-monocle.svg)](LICENSE)
 
 A Vue 3 integration for the Monocle SDK (`spur-monocle-manager`), enabling dynamic script loading and easy interaction with the Monocle API.
 

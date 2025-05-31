@@ -43,7 +43,7 @@ const modulesBuild = {
 
 const entryBuild = {
   input: 'src/index.ts',
-  external: (id) => id === 'vue' || id.endsWith('/useMonocle') || id.endsWith('/injectionKey'),
+  external: ['vue', 'spur-monocle-manager'], 
   plugins: basePlugins,
   output: [
     {
