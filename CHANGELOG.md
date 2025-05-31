@@ -2,6 +2,12 @@
 
 All notable changes...
 
+## [2.0.6](https://github.com/Xavier4492/vue-spur-monocle/compare/v2.0.5...v2.0.6) (2025-05-31)
+
+### Bug Fixes
+
+* enhance SSR support in MonoclePlugin by providing a no-op instance ([b0b3bdf](https://github.com/Xavier4492/vue-spur-monocle/commit/b0b3bdf1901743b40eb37242c7b0a1ceb85cbe30))
+
 ## [2.0.5](https://github.com/Xavier4492/vue-spur-monocle/compare/v2.0.4...v2.0.5) (2025-05-31)
 
 ## [2.0.4](https://github.com/Xavier4492/vue-spur-monocle/compare/v2.0.3...v2.0.4) (2025-05-31)
