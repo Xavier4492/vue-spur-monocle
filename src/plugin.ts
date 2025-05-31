@@ -13,10 +13,32 @@ import { MonocleKey } from './injectionKey'
  * app.mount('#app')
  * ```
  */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export const MonoclePlugin: Plugin = {
   install(app: App, options: MonocleOptions) {
-    if (typeof window === 'undefined') return
+    const isSSR = typeof window === 'undefined'
+    let monocleInstance: Monocle | null
+
+    if (isSSR) {
+      // For SSR, we provide a no-op instance
+      // This allows the app to compile and run without errors in SSR environments
+      monocleInstance = {
+        init: async () => {
+          /* no-op */
+        },
+        getAssessment: async () => {
+          throw new Error('Monocle not available in SSR')
+        },
+        on: () => {
+          /* no-op */
+        },
+        off: () => {
+          /* no-op */
+        },
+      } as any as Monocle
+      app.config.globalProperties.$monocle = monocleInstance
+      app.provide(MonocleKey, monocleInstance)
+      return
+    }
 
     if ((app.config.globalProperties as any).$monocle) {
       console.warn('[MonoclePlugin] already installed on this app instance.')
