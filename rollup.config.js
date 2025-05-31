@@ -43,7 +43,7 @@ const modulesBuild = {
 
 const entryBuild = {
   input: 'src/index.ts',
-  external: ['vue', 'spur-monocle-manager'], 
+  external: ['vue', 'spur-monocle-manager'],
   plugins: basePlugins,
   output: [
     {
