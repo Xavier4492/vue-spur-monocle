@@ -2,6 +2,12 @@
 
 All notable changes...
 
+## [2.0.4](https://github.com/Xavier4492/vue-spur-monocle/compare/v2.0.3...v2.0.4) (2025-05-31)
+
+### Bug Fixes
+
+* import file extension for esm ([16c73d0](https://github.com/Xavier4492/vue-spur-monocle/commit/16c73d0b18fe9706d1ff02968d34860408facf64))
+
 ## [2.0.3](https://github.com/Xavier4492/vue-spur-monocle/compare/v2.0.2...v2.0.3) (2025-05-22)
 
 ### Bug Fixes
